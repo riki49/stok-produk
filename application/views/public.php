@@ -10,7 +10,9 @@
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 
 <!-- footer -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/footer/demo.css">
+	<link rel="stylesheet" href="assets/footer/demo1.css">
 	<link rel="stylesheet" href="assets/footer/footer-distributed-with-contact-form.css">
 <!-- footer -->
 
@@ -32,6 +34,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- cart -->
 <script src="<?php echo base_url()?>assets/js/simpleCart.min.js"></script>
 <!-- cart -->
+<style>
+
+</style>
 </head>
 <body>
 	<!--header-->
@@ -618,16 +623,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 
 		<footer class="footer-distributed">
-
 			<div class="footer-left">
-
 				<p class="footer-company-name">husnudzon food &copy; 2017</p>
-
 				<div class="footer-icons">
-					<a href="https://web.facebook.com/Husnudzon.Food/"><i class="fa fa-facebook"></i></a>
-					<!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-					<a href="https://www.instagram.com/husnudzhonfood_official/?hl=id"><i class="fa fa-linkedin"></i></a>
 					<a href="https://github.com/riki49"><i class="fa fa-github"></i></a>
+					<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-youtube"></a>
+					<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"></a>
 				</div>
 			</div>
 		</footer>
