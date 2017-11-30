@@ -56,6 +56,12 @@
       <div class="col-xs-12">
         <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
       </div>
+      <div class="form-control"></div>
+      <div class="col-xs-12">
+        <button type="submit" formaction="<?php echo base_url('')?>" class="btn btn-primary btn-block btn-flat" >cancel</button>
+      </div>
+      
+
         
         <!-- /.col -->
       </div>

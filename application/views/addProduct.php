@@ -38,17 +38,17 @@
     <form action="<?php echo base_url('manageStock/addStock') ?>" method="post">
 
       <div class="form-group has-feedback">
-          <input name="date" type="date" class="form-control"></input>
+          <input name="tanggal" type="date" class="form-control"></input>
       </div>
 
       <div class="form-group has-feedback">
-      <select name="produk" class="form-control">  
+      <select name="nama" class="form-control">  
            <option value="">nama produk</option>  
            <option value="makaroni">Makaroni</option>  
            <option value="Pangsit">Pangsit</option>  
            <option value="Bihun">Bihun</option>  
            <option value="Batagor">Batagor</option>  
-           <option value="Lumpuia">Lumpuia</option>  
+           <option value="Lumpia">Lumpuia</option>  
            <option value="Cimol">Cimol</option>  
            <option value="Siomay">Siomay</option>  
           </select>

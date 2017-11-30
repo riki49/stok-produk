@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	$this->load->model('loginmodel');
 	}
 
-	public function inputLogin() {
+	public function index() {
 		$this->load->view('login');
 	}
 		
@@ -25,13 +25,18 @@ class Login extends CI_Controller {
 			} else {
 				$passresult = 'salah';
 			}
-				if($passresult == $pass){
-					// session_start();
-					// $_SESSION['isLogin'] = true;
-					redirect('admin');
-				} else {
-					$this->load->view('login');
-				}
+				
+			if($passresult == $pass){
+				$data_session = array(
+				'nama' => $user,
+				'status' => "login"
+				);
+				$this->session->set_userdata($data_session);		
+				redirect('admin');
+			} else {
+				echo "Username dan password salah !";
+				$this->load->view('login');
+			}
 		} else {
 			$passresult = '';
 			$tabel = $this->input->post('level');
@@ -45,7 +50,13 @@ class Login extends CI_Controller {
 			}
 			
 			if($passresult == $pass){
-				$this->load->view('public');
+				// $this->load->view('reseller');
+				$data_session = array(
+				'nama' => $user,
+				'status' => "login"
+				);
+				$this->session->set_userdata($data_session);
+				redirect('reseller');
 			} else {
 				$this->load->view('login');
 			}

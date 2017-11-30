@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="top-right">
 					<ul>
-						<li><a href="<?php echo base_url('login/inputLogin')?>">login</a></li>
+						<li><a href="<?php echo base_url('login')?>">login</a></li>
 						<li><a href="#"> Create Account </a></li>
 					</ul>
 				</div>
@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<nav class="navbar navbar-default">
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#" class="act">All product</a></li>	
+								<li class="active"><a href="manageStock/readAllStock" class="act">All product</a></li>	
 								<li><a href="<?php echo base_url('editStok') ?>">Catering</a></li>
 								<li><a href="#">Snack</a></li>
 								<li><a href="#">Cireng</a></li>
