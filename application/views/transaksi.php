@@ -1,15 +1,13 @@
-﻿<?php
+<?php
   $id="";
-  $nama="";
-  $alamat="";
-  $fax="";
-  $phone="";
-  if (isset($m_kastamer)){
-    $id=$m_kastamer->id;
-    $nama=$m_kastamer->nama;
-    $alamat=$m_kastamer->alamat;
-    $fax=$m_kastamer->fax;
-    $phone=$m_kastamer->phone; 
+  $harga="";
+  $tgl_produksi="";
+  $jumlah="";
+  if (isset($m_produk)){
+    $id=$m_produk->id;
+    $harga=$m_produk->harga;
+    $jumlah=$m_produk->jumlah;
+    $tgl_produksi=$m_produk->tgl_produksi; 
   }
   ?>
 <!DOCTYPE html>
@@ -17,7 +15,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Megah Alkesindo</title>
+  <title>Khusnudzhon Food</title>
   <!-- Tell the browser to be responsive to screen width -->
   
   <!-- Bootstrap 3.3.7 -->
@@ -43,15 +41,6 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -59,15 +48,15 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>H</b>FD</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Megah</b> Alkesindo</span>
+      <span class="logo-lg"><b>Husnudzon</b> Food</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
+      <!-- Sidebar toggle button / untuk meminimize tampilan menu bar-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
@@ -132,12 +121,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master Supplier
+        Pengambilan Barang
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">reseller</li>
+        <li class="active">Produk</li>
       </ol>
     </section>
 
@@ -146,48 +135,67 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>reseller"><button type="button" class="btn bg-olive btn-flat margin"><- Kembali</button></a>
+        <a href="<?php echo base_url()?>Produk"><button type="button" class="btn bg-olive btn-flat margin">Kembali</button></a>
             <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Form reseller</h3>
+              <h3 class="box-title">Form Produk</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form action="#" method="post" class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">ID reseller</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
 
                   <div class="col-sm-6">
-                    <input  type="text" class="form-control" name="id" value="<?php echo $id ?>" id="success" />
+                    <input type="date" name="tgl_produksi" value="<?php echo $tgl_produksi ?>"  class="form-control" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Nama reseller</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Product Name</label>
 
                   <div class="col-sm-6">
-                    <input  type="text" class="form-control" name="nama" value="<?php echo $nama ?>" id="success" />
+                    <select name="nama" class="form-control" id="success">
+                        <option value="batagor">Batagor</option> 
+                        <option value="bihun">Bihun</option> 
+                        <option value="cimol">Cimol</option> 
+                        <option value="lumpia">Lumpia</option> 
+                        <option value="makaroni">Makaroni</option> 
+                        <option value="pangsit">Pangsit</option> 
+                        <option value="siomay">Siomay</option>      
+              </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Alamat</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Level</label>
+                  <div class="col-sm-6">
+                    <select name="level" class="form-control" id="success">
+                      <option value="aman">Aman</option> 
+                      <option value="siaga">Siaga</option> 
+                      <option value="waspada">Waspada</option> 
+                      <option value="bahaya">Bahaya</option> 
+                    </select>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">harga</label>
 
                   <div class="col-sm-6">
-                    <textarea name="alamat"  class="form-control" id="success" ><?php echo $alamat?></textarea> 
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="success" />
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Banyaknya unit</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Telepon</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Jumlah Bayar</label>
 
                   <div class="col-sm-6">
-                    <input type="text" name="phone" value="<?php echo $phone ?>"  class="form-control" id="success" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Fax</label>
-
-                  <div class="col-sm-6">
-                    <input type="text" name="fax" value="<?php echo $fax ?>"  class="form-control" id="success" />
+                    <input type="text" name="harga" value="<?php echo $harga ?>"  class="form-control" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
@@ -221,160 +229,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <!-- Home tab content -->
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-         
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
+      <div class="tab-pane" id="control-sidebar-home-tab"></div>
     </div>
   </aside>
   <!-- /.control-sidebar -->

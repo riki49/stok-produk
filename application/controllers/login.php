@@ -18,10 +18,10 @@ class Login extends CI_Controller {
 			$user = $this->input->post('user');
 			$pass = $this->input->post('pass');
 
-			$login = $this->loginmodel->getLogin($tabel, $user);
+			$datalogin = $this->loginmodel->getLogin($tabel, $user);
 
-			if ($login != '') {
-				$passresult = $login->password;
+			if ($datalogin != '') {
+				$passresult = $datalogin->password;
 			} else {
 				$passresult = 'salah';
 			}
@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 			if($passresult == $pass){
 				$data_session = array(
 				'nama' => $user,
-				'status' => "login"
+				'status' => TRUE
 				);
 				$this->session->set_userdata($data_session);		
 				redirect('admin');

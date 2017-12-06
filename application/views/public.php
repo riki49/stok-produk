@@ -622,16 +622,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 
-		<footer class="footer-distributed">
-			<div class="footer-left">
-				<p class="footer-company-name">husnudzon food &copy; 2017</p>
-				<div class="footer-icons">
-					<a href="https://github.com/riki49"><i class="fa fa-github"></i></a>
-					<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-youtube"></a>
-					<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"></a>
-				</div>
-			</div>
-		</footer>
+	<footer class="footer-distributed">
+		<p class="footer-company-name">husnudzon food &copy; 2017</p>
+		<div class="footer-icons">
+			<h2 style="color:white">Follow Us</h2>
+			<a href="https://github.com/riki49"><i class="fa fa-github"></i></a>
+			<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-youtube"></a>
+			<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"></a>
+		</div>
+	</footer>
 </body>
 </html>

@@ -1,17 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-	function __construct(){
-		parent::__construct();
-			if($this->session->userdata('status') != "login"){
-				redirect(base_url("login"));
-			}
-	}
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('modelproduk');
+		if ($this->session->userdata('status') !=TRUE) {
+			redirect('login');
+		}
+	}
+	// ini fungsi pindahan dari produk
 	public function index() {
+		// $user = $this->session->userdata('user');
+		// print_r($user);
 		$this->read();
 	}
 	public function read() {
-		$this->load->view('produk/m_produk');
+		$data['produk'] = $this->modelproduk->readproduk();
+		$this->load->view('admin/m_produk',$data);
 	}
 }

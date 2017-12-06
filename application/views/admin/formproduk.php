@@ -1,15 +1,13 @@
 ﻿<?php
   $id="";
-  $nama="";
-  $alamat="";
-  $pic="";
-  $phone="";
-  if (isset($m_supplier)){
-    $id=$m_supplier->id;
-    $nama=$m_supplier->nama;
-    $alamat=$m_supplier->alamat;
-    $pic=$m_supplier->pic;
-    $phone=$m_supplier->phone; 
+  $harga="";
+  $tgl_produksi="";
+  $jumlah="";
+  if (isset($m_produk)){
+    $id=$m_produk->id;
+    $harga=$m_produk->harga;
+    $jumlah=$m_produk->jumlah;
+    $tgl_produksi=$m_produk->tgl_produksi; 
   }
   ?>
 <!DOCTYPE html>
@@ -17,7 +15,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Megah Alkesindo</title>
+  <title>Khusnudzhon Food</title>
   <!-- Tell the browser to be responsive to screen width -->
   
   <!-- Bootstrap 3.3.7 -->
@@ -132,12 +130,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master Supplier
+        Master Produk
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Supplier</li>
+        <li class="active">Produk</li>
       </ol>
     </section>
 
@@ -146,48 +144,67 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>supplier"><button type="button" class="btn bg-olive btn-flat margin"><- Kembali</button></a>
+        <a href="<?php echo base_url()?>Produk"><button type="button" class="btn bg-olive btn-flat margin">Kembali</button></a>
             <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Form Supplier</h3>
+              <h3 class="box-title">Form Produk</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form action="#" method="post" class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">ID Supplier</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Product ID</label>
 
                   <div class="col-sm-6">
                     <input  type="text" class="form-control" name="id" value="<?php echo $id ?>" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Nama Supplier</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
 
                   <div class="col-sm-6">
-                    <input  type="text" class="form-control" name="nama" value="<?php echo $nama ?>" id="success" />
+                    <input type="date" name="tgl_produksi" value="<?php echo $tgl_produksi ?>"  class="form-control" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Alamat</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Product Name</label>
 
                   <div class="col-sm-6">
-                    <textarea name="alamat"  class="form-control" id="success" > <?php echo $alamat ?> </textarea> 
+                    <select name="nama" class="form-control" id="success">
+                        <option value="batagor">Batagor</option> 
+                        <option value="bihun">Bihun</option> 
+                        <option value="cimol">Cimol</option> 
+                        <option value="lumpia">Lumpia</option> 
+                        <option value="makaroni">Makaroni</option> 
+                        <option value="pangsit">Pangsit</option> 
+                        <option value="siomay">Siomay</option>      
+              </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">PIC</label>
-
+                  <label for="inputEmail3" class="col-sm-2 control-label">Level</label>
                   <div class="col-sm-6">
-                    <input type="text" name="pic" value="<?php echo $pic ?>"  class="form-control" id="success" />
+                    <select name="level" class="form-control" id="success">
+                      <option value="aman">Aman</option> 
+                      <option value="siaga">Siaga</option> 
+                      <option value="waspada">Waspada</option> 
+                      <option value="bahaya">Bahaya</option> 
+                    </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Telepon</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
 
                   <div class="col-sm-6">
-                    <input type="text" name="phone" value="<?php echo $phone ?>"  class="form-control" id="success" />
+                    <input type="text" name="harga" value="<?php echo $harga ?>"  class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Stock</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="success" />
                   </div>
                 </div>
                 <div class="form-group">
