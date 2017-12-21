@@ -18,7 +18,7 @@ class Modelproduk extends CI_Model{
 		return $query -> result();
 	}
 	function detailproduk($id){
-		$this->db->where('id',$id);
+		$this->db->where('id', $id);
 		$query=$this->db->get('produk');
 		return $query->row();
 	}
@@ -30,7 +30,7 @@ class Modelproduk extends CI_Model{
 			'tgl_produksi' => $this->input->post ('tgl_produksi'),
 			'jumlah' => $this->input->post ('jumlah')
 		);
-		$this->db->where('id',$id);
+		$this->db->where('id', $id);
 		$this->db->update('produk',$data);
 	}
 	function deleteproduk ($id){

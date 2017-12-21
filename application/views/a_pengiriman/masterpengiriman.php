@@ -21,9 +21,6 @@
  
   <!-- jvectormap -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  
-  <!-- Daterange picker -->
   
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
@@ -60,8 +57,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url()?>
-                assets/dist/img/user2-160x160.jpg" 
+                <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" 
                 class="img-circle" alt="User Image">
 
                 <p>
@@ -74,15 +70,14 @@
               <li class="user-footer">
                 <div class="pull-center">
                   <a href="<?php echo base_url()?>login/doLogout" 
-                  class="btn btn-default btn-flat">Sign out</a>
+                    class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar">
-            <i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>
@@ -102,7 +97,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master produk
+        Master pengiriman
         <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -117,9 +112,9 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>produk/create"><button 
-        type="button" class="btn bg-olive btn-flat margin">
-        + Tambah Stok</button></a>
+        <a href="<?php echo base_url()?>admin">
+        <button type="button" class="btn bg-olive btn-flat margin">
+        kembali</button></a>
           <!-- /.box -->
 
           <div class="box">
@@ -138,12 +133,16 @@
                     <th class="col-md-1">level</th>
                     <th class="col-md-1">harga</th>
                     <th class="col-md-1">jumlah</th>
+                    <th class="col-md-1">bayar</th>
                     <th class="col-md-1">Opsi</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php
-                foreach ($produk as $m_produk) : 
+                <?php 
+                $total = 0;
+                foreach ($produk as $m_produk) :
+                $subtotal = $m_produk->harga * $m_produk->jumlah;
+                $total += $subtotal;
                 ?>
                     <tr>
                         <td><?=$m_produk->id?></td>
@@ -152,17 +151,20 @@
                         <td><?=$m_produk->level?></td>
                         <td><?=$m_produk->harga?></td>
                         <td><?=$m_produk->jumlah?></td>
+                        <td>Rp.<?= number_format($subtotal) ?></td>
                         <td>
-                          
-                            <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>"
-                             class="btn btn-warning">Edit</a>
-                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){
-                             location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>'
-                              }" class="btn btn-danger">Hapus</a>
+                          <a href="<?php echo base_url()?>pengiriman/loadupdate/<?php echo $m_produk->id;?>"
+                             class="btn btn-warning">kirim</a>
                         </td>
                     </tr>
 
                    <?php endforeach; ?>
+                <tfoot>
+                      <tr>
+                        <th colspan="6">Total</th>
+                        <th>Rp.<?= number_format($total)?></th>
+                      </tr>
+                    </tfoot>
                 </tbody>
               </table>
             </div>

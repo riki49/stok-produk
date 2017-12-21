@@ -2,21 +2,20 @@
 
 class Reseller extends CI_Controller {
 
-public function __construct() {
-	parent::__construct();
-	$this->load->model('modelkastamer');
-	if ($this->session->userdata('isLogin') ==FALSE) {
-	redirect('');
-}
-}
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('modelproduk');
+		if ($this->session->userdata('status') !=TRUE) {
+			redirect('login');
+		}
+	}
 
 	public function index() {
 		$this->read();
 	}
-	public function read()
-	{
-		$data['reseller'] = $this->modelkastamer->readkastamer();
-		$this->load->view('reseller/m_kastamer',$data);
+	public function read() {
+		$data['produk'] = $this->modelproduk->readproduk();
+		$this->load->view('reseller/m_kastemer',$data);
 	}
 	public function create()
 	{

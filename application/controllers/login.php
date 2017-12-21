@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata($data_session);		
 				redirect('admin');
 			} else {
-				echo "Username dan password salah !";
+				echo "<script>alert('user name/password salah');</script>";
 				$this->load->view('login');
 			}
 		} else {
@@ -50,7 +50,6 @@ class Login extends CI_Controller {
 			}
 			
 			if($passresult == $pass){
-				// $this->load->view('reseller');
 				$data_session = array(
 				'nama' => $user,
 				'status' => "login"
@@ -58,6 +57,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata($data_session);
 				redirect('reseller');
 			} else {
+				echo "<script>alert('user name/password salah');</script>";
 				$this->load->view('login');
 			}
 		}

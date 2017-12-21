@@ -628,7 +628,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h2 style="color:white">Follow Us</h2>
 			<a href="https://github.com/riki49"><i class="fa fa-github"></i></a>
 			<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"></a>
-			<a href="#" class="fa fa-youtube"></a>
+			<a href="https://www.youtube.com/channel/UCM9wyk8h81LWs7DcqqTxGmA" class="fa fa-youtube"></a>
 			<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"></a>
 		</div>
 	</footer>

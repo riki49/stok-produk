@@ -1,9 +1,25 @@
+<?php
+  $id="";
+  $harga="";
+  $tgl_produksi="";
+  $jumlah="";
+  $level ="";
+  $nama = "";
+  if (isset($m_produk)){
+    $id=$m_produk->id;
+    $harga=$m_produk->harga;
+    $jumlah=$m_produk->jumlah;
+    $tgl_produksi=$m_produk->tgl_produksi;
+    $level = $m_produk->level;
+    $nama = $m_produk->nama;
+  }
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Husnudzon Food</title>
+  <title>Khusnudzhon Food</title>
   <!-- Tell the browser to be responsive to screen width -->
   
   <!-- Bootstrap 3.3.7 -->
@@ -29,17 +45,18 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a class="logo">
+    <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>FD</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Husnudzon</b> food</span>
+      <span class="logo-lg"><b>Husnudzon</b> Food</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -50,19 +67,27 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          
+          <li class="dropdown notifications-menu">
+            
+            
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            
+            
+          </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" 
-              class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo "wow" ?></span>
+              <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url()?>
-                assets/dist/img/user2-160x160.jpg" 
-                class="img-circle" alt="User Image">
+                <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Admin
@@ -73,16 +98,14 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-center">
-                  <a href="<?php echo base_url()?>login/doLogout" 
-                  class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url()?>login/doLogout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar">
-            <i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>
@@ -102,13 +125,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master produk
+        Transaksi Pengiriman Produk
         <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo base_url('') ?>">
-        <i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">produk</li>
+        <li><a href="<?php echo base_url('') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Produk</li>
       </ol>
     </section>
 
@@ -117,57 +139,78 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>produk/create"><button 
-        type="button" class="btn bg-olive btn-flat margin">
-        + Tambah Stok</button></a>
-          <!-- /.box -->
-
-          <div class="box">
-
-            <div class="box-header">
-              <h3 class="box-title">Data produk</h3>
+        <a href="<?php echo base_url()?>admin"><button type="button" class="btn bg-olive btn-flat margin">Kembali</button></a>
+            <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Form Pengiriman</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th class="col-md-1">Id</th>
-                    <th class="col-md-1">Tanggal</th>
-                    <th class="col-md-1">Nama produk</th>
-                    <th class="col-md-1">level</th>
-                    <th class="col-md-1">harga</th>
-                    <th class="col-md-1">jumlah</th>
-                    <th class="col-md-1">Opsi</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                foreach ($produk as $m_produk) : 
-                ?>
-                    <tr>
-                        <td><?=$m_produk->id?></td>
-                        <td><?=$m_produk->tgl_produksi?></td>
-                        <td><?=$m_produk->nama?></td>
-                        <td><?=$m_produk->level?></td>
-                        <td><?=$m_produk->harga?></td>
-                        <td><?=$m_produk->jumlah?></td>
-                        <td>
-                          
-                            <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>"
-                             class="btn btn-warning">Edit</a>
-                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){
-                             location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>'
-                              }" class="btn btn-danger">Hapus</a>
-                        </td>
-                    </tr>
+            <!-- /.box-header --> 
+            <!-- form start -->
+            <form action="<?php echo base_url()?>produk/update/<?php echo $id ?>" method="post" class="form-horizontal">
+              <div class="box-body">
+                 <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">id transaksi</label>
 
-                   <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
+                  <div class="col-sm-6">
+                    <input type="text" name="idtrx" value="" class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Product ID</label>
+
+                  <div class="col-sm-6">
+                    <input  type="text" readonly class="form-control" name="idproduk" value="<?php echo $id ?>" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">tanggal transaksi</label>
+
+                  <div class="col-sm-6">
+                    <input type="date" name="tgl_produksi" value="<?php echo $tgl_produksi ?>"  class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Product Name</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="nama" value="<?php 
+                    echo $nama ?>" readonly class="form-control" id="success" />
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Level</label>
+                  <div class="col-sm-6">
+                    <input type="text" name="level" value="<?php 
+                    echo $level ?>" readonly class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Price</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="harga" value="<?php echo $harga ?>"  class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Stock</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="success" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Action</label>
+
+                  <div class="col-sm-6">
+                    <input type="submit" class="btn bg-olive btn-flat margin" value="Simpan">
+                    <input type="reset" class="btn bg-maroon btn-flat margin" value="Ulangi">
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
+          
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -188,7 +231,6 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane" id="control-sidebar-home-tab"></div>
-    </div>
   </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed

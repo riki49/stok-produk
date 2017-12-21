@@ -140,7 +140,6 @@
                     <th class="col-md-1">level</th>
                     <th class="col-md-1">harga</th>
                     <th class="col-md-1">jumlah</th>
-                    <th class="col-md-1">Opsi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -152,11 +151,6 @@
                         <td><?=$m_produk->level?></td>
                         <td><?=$m_produk->harga?></td>
                         <td><?=$m_produk->jumlah?></td>
-                        <td>
-                          
-                            <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>" class="btn btn-warning">Edit</a>
-                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>' }" class="btn btn-danger">Hapus</a>
-                        </td>
                     </tr>
                    <?php } ?>
                 
