@@ -25,27 +25,21 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Form Login</p>
-    <form action="<?php echo base_url('login/doLogin') ?>" method="post">
+    <p class="login-box-msg">Create Account</p>
+    <form action="<?php echo base_url('createakun/create') ?>" method="post">
       <div class="form-group has-feedback">
-        <select name="level" class="form-control">    
-        <option value="admin">Masuk sebagai Admin</option>  
-        <option value="reseller">Masuk sebagai Reseller</option>  
-        </select>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="user" placeholder="Username">
+        <input type="text" class="form-control" name="username" placeholder="Username">
         <span class="glyphicon glyphicon-user form-control-feedback" ></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="pass" placeholder="Password">
+        <input type="password" class="form-control" name="password" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <!-- /.col -->
         
       <div class="col-xs-12">
-        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">Create</button>
       </div>
       <div class="col-xs-12">
         <button type="submit" formaction="<?php echo base_url('')?>" class="btn btn-primary btn-block btn-flat" >cancel</button>

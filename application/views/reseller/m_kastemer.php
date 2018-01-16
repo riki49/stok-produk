@@ -29,15 +29,6 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -97,7 +88,7 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php 
-        $this->load->view('layout/menu')
+        $this->load->view('layoutseller/menu')
      ?>
     <!-- /.sidebar -->
   </aside>
@@ -107,7 +98,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master produk
+        Stok Toko kami saat ini
         <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -121,7 +112,7 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>produk/create"><button type="button" class="btn bg-olive btn-flat margin">+ Tambah Stok</button></a>
+        <a href="<?php echo base_url()?>produk/create"><button type="button" class="btn bg-olive btn-flat margin">+ pesan produk</button></a>
           <!-- /.box -->
 
           <div class="box">

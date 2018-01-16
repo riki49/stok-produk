@@ -4,16 +4,13 @@
 <head>
 <title>husnudzon food</title>
 <!--css-->
-<link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo base_url()?>assets/css/bootstrap.css" 
+rel="stylesheet" type="text/css" media="all"/>
+<link href="<?php echo base_url()?>assets/css/style.css" 
+rel="stylesheet" type="text/css" media="all" />
 <link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-
 <!-- footer -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/footer/demo.css">
-	<link rel="stylesheet" href="assets/footer/demo1.css">
-	<link rel="stylesheet" href="assets/footer/footer-distributed-with-contact-form.css">
+	<link rel="stylesheet" href="assets/css/foot.css">
 <!-- footer -->
 
 <!--css-->
@@ -29,9 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<?php echo base_url()?>assets/js/main.js"></script>
 <!--search jQuery-->
 
- <!--mycart-->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
- <!-- cart -->
+<!-- cart -->
 <script src="<?php echo base_url()?>assets/js/simpleCart.min.js"></script>
 <!-- cart -->
 <style>
@@ -47,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-right">
 					<ul>
 						<li><a href="<?php echo base_url('login')?>">login</a></li>
-						<li><a href="#"> Create Account </a></li>
+						<li><a href="<?php echo base_url('createakun')?>"> Create Account </a></li>
 					</ul>
 				</div>
 				<div class="logo-nav">
@@ -105,12 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<div class="col-md-9 product-agileinfon-grid1">
 							<div class="product-agileinfon-top">
-								<div class="col-md-6 product-agileinfon-top-left">
-									<img class="img-responsive " src="images/img3.jpg" alt="">
-								</div>
-								<div class="col-md-6 product-agileinfon-top-left">
-									<img class="img-responsive " src="images/img4.jpg" alt="">
-								</div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="mens-toolbar">
@@ -626,10 +615,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<p class="footer-company-name">husnudzon food &copy; 2017</p>
 		<div class="footer-icons">
 			<h2 style="color:white">Follow Us</h2>
-			<a href="https://github.com/riki49"><i class="fa fa-github"></i></a>
-			<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"></a>
-			<a href="https://www.youtube.com/channel/UCM9wyk8h81LWs7DcqqTxGmA" class="fa fa-youtube"></a>
-			<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"></a>
+			<a href="https://github.com/riki49" target="_blank"><i class="fa fa-github" ></i></a>
+			<a href="https://web.facebook.com/Husnudzon.Food" class="fa fa-facebook"  target="_blank"></a>
+			<a href="https://www.youtube.com/channel/UCM9wyk8h81LWs7DcqqTxGmA" class="fa fa-youtube" target="_blank"></a>
+			<a href="https://www.instagram.com/husnudzhonfood_official" class="fa fa-instagram"  target="_blank"></a>
 		</div>
 	</footer>
 </body>

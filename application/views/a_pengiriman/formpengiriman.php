@@ -189,16 +189,38 @@
                   <label class="col-sm-2 control-label">Price</label>
 
                   <div class="col-sm-6">
-                    <input type="text" name="harga" value="<?php echo $harga ?>"  class="form-control" id="success" />
+                    <input type="text" name="harga" readonly value="<?php echo $harga ?>"  class="form-control" id="harga" onkeyup="sum();" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Stock</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label"  >Stock tersedia </label>
 
                   <div class="col-sm-6">
-                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="success" />
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>" id="stok" readonly class="form-control" />
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">jumlah pengambilan </label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="jumlah"  class="form-control" id="jumlahambil" onkeyup="sum();" />
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label" >jumlah bayar</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="jumlah" value="<?php echo $jumlah ?>"  class="form-control" id="jumlahbayar" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label" >diterima dari</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" name="penjual" value="nama penjual"  class="form-control" />
+                  </div>
+                </div>
+
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Action</label>
 
@@ -281,6 +303,16 @@
       'autoWidth'   : false
     })
   })
+
+  function sum() {
+      var jmlharga = document.getElementById('harga').value;
+      var jmlambil = document.getElementById('jumlahambil').value;
+      var jmlbayar = parseInt(jmlharga) * parseInt(jmlambil);
+      
+      if (!isNaN(jmlbayar)) {
+         document.getElementById('jumlahbayar').value = jmlbayar;
+      }
+}
 </script>
 </body>
 </html>

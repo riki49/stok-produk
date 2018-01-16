@@ -10,9 +10,4 @@ class Loginmodel extends CI_Model{
 		else
 		return '';
 	}
-
-	public function getData(){
-		echo "fuck";
-	}
-
 }

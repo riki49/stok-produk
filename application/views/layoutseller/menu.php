@@ -30,20 +30,6 @@
             <li ><a href="#"><i class="fa fa-circle-o"></i> Pengembalian</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kadaluarsa</a></li>
           </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-clone"></i> <span>Lihat Laporan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li ><a href="#"><i class="fa fa-circle-o"></i> Daftar Produk</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Daftar Reseller</a></li>
-            <li ><a href="#"><i class="fa fa-circle-o"></i> Daftar tempat penjualan</a></li>
-            <li ><a href="#"><i class="fa fa-circle-o"></i> Daftar transaksi</a></li>
-          </ul>
-        </li>
+        </li>ss
        
     </section>
