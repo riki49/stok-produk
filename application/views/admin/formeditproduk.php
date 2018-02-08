@@ -13,6 +13,8 @@
     $level = $m_produk->level;
     $nama = $m_produk->nama;
   }
+
+$nama = $_SESSION['nama'];
   ?>
 <!DOCTYPE html>
 <html>
@@ -82,7 +84,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Admin</span>
+              <span class="hidden-xs"><?php echo $nama ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -90,7 +92,7 @@
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin
+                  <?php echo $nama ?>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -213,7 +215,7 @@
   </div>
   <!-- /.content-wrapper -->
   <?php 
-    $this->load->view('layout/footer')
+    $this->load->view('footer')
    ?>
 
   <!-- Control Sidebar -->

@@ -1,3 +1,4 @@
+<?php   $nama = $_SESSION['nama']; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +53,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" 
               class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo "wow" ?></span>
+              <span class="hidden-xs"><?php echo $nama ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -61,7 +62,7 @@
                 class="img-circle" alt="User Image">
 
                 <p>
-                  Admin
+                  <?php echo $nama ?>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -180,7 +181,7 @@
   </div>
   <!-- /.content-wrapper -->
   <?php 
-    $this->load->view('layout/footer')
+    $this->load->view('footer')
    ?>
 
   <!-- Control Sidebar -->

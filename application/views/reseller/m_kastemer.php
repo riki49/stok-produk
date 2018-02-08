@@ -1,3 +1,7 @@
+<?php 
+$nama = $_SESSION['nama'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +32,6 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-
   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -55,7 +58,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo "wow" ?></span>
+              <span class="hidden-xs"><?php echo $nama; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -63,7 +66,7 @@
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin
+                  <?php echo $nama; ?>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -112,7 +115,7 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>produk/create"><button type="button" class="btn bg-olive btn-flat margin">+ pesan produk</button></a>
+        <a href="<?php echo base_url('reseller/create')?>"><button type="button" class="btn bg-olive btn-flat margin">+ pesan produk</button></a>
           <!-- /.box -->
 
           <div class="box">
@@ -125,18 +128,16 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th class="col-md-1">Id</th>
-                    <th class="col-md-1">Tanggal</th>
+                    <th class="col-md-1">Tanggal produksi</th>
                     <th class="col-md-1">Nama produk</th>
                     <th class="col-md-1">level</th>
                     <th class="col-md-1">harga</th>
-                    <th class="col-md-1">jumlah</th>
+                    <th class="col-md-1">jumlah barang</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($produk as $m_produk){ ?>
                     <tr>
-                        <td><?=$m_produk->id?></td>
                         <td><?=$m_produk->tgl_produksi?></td>
                         <td><?=$m_produk->nama?></td>
                         <td><?=$m_produk->level?></td>
@@ -160,7 +161,7 @@
   </div>
   <!-- /.content-wrapper -->
   <?php 
-    $this->load->view('layout/footer')
+    $this->load->view('footer')
    ?>
 
   <!-- Control Sidebar -->

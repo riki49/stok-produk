@@ -10,39 +10,40 @@ class Login extends CI_Controller {
 	public function index() {
 		$this->load->view('login');
 	}
-		
+			
 	public function doLogin() {
 		$passresult = '';
-		if ($this->input->post('level') == 'admin') {
-			$tabel = $this->input->post('level');
-			$user = $this->input->post('user');
-			$pass = $this->input->post('pass');
+		$email = $this->input->post('email');
+		$pass = $this->input->post('pass');
 
-			$datalogin = $this->loginmodel->getLogin($tabel, $user);
-
+		if ($email == 'rikimustofa49@gmail.com') {
+			
+			$datalogin = $this->loginmodel->getLogin($email);
+			$user = $datalogin->username;
+			
 			if ($datalogin != '') {
 				$passresult = $datalogin->password;
 			} else {
 				$passresult = 'salah';
 			}
-				
+
 			if($passresult == $pass){
 				$data_session = array(
 				'nama' => $user,
 				'status' => TRUE
 				);
-				$this->session->set_userdata($data_session);		
+				// session_start();
+				// $_SESSION['nama'] = $user;
+				$this->session->set_userdata($data_session);
 				redirect('admin');
 			} else {
 				echo "<script>alert('user name/password salah');</script>";
-				$this->load->view('login');
+				// $this->load->view('login');
+				redirect('login');
 			}
 		} else {
-			$passresult = '';
-			$tabel = $this->input->post('level');
-			$user = $this->input->post('user');
-			$pass = $this->input->post('pass');
-			$login = $this->loginmodel->getLogin($tabel, $user);
+			$login = $this->loginmodel->getLogin($email);
+			$user = $login->username;
 			if ($login != '') {
 				$passresult = $login->password;
 			} else {
@@ -55,6 +56,8 @@ class Login extends CI_Controller {
 				'status' => "login"
 				);
 				$this->session->set_userdata($data_session);
+				// session_start();
+				// $_SESSION['nama'] = $user;
 				redirect('reseller');
 			} else {
 				echo "<script>alert('user name/password salah');</script>";

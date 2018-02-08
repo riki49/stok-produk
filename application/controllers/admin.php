@@ -17,4 +17,8 @@ class Admin extends CI_Controller {
 		$data['produk'] = $this->modelproduk->readproduk();
 		$this->load->view('admin/m_produk',$data);
 	}
+
+	public function edit() {
+		$this->load->view('fotogalery');
+	}
 }

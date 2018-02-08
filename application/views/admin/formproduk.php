@@ -229,7 +229,7 @@
   </div>
   <!-- /.content-wrapper -->
   <?php 
-    $this->load->view('layout/footer')
+    $this->load->view('footer')
    ?>
 
   <!-- Control Sidebar -->

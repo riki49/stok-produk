@@ -1,3 +1,7 @@
+<?php 
+$nama = $_SESSION['nama'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +32,7 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-
+  
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -54,17 +58,15 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo "wow" ?></span>
+              <span class="hidden-xs"><?php echo $nama; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url()?>
-                assets/dist/img/user2-160x160.jpg" 
-                class="img-circle" alt="User Image">
+                <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin
+                  <?php echo $nama; ?>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -72,16 +74,14 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-center">
-                  <a href="<?php echo base_url()?>login/doLogout" 
-                  class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url()?>login/doLogout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar">
-            <i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>
@@ -177,7 +177,7 @@
   </div>
   <!-- /.content-wrapper -->
   <?php 
-    $this->load->view('layout/footer')
+    $this->load->view('footer')
    ?>
 
   <!-- Control Sidebar -->

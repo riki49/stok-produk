@@ -8,13 +8,13 @@ class Createakun extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('createreseller');
+		$this->load->view('registered');
 	}
 
 	public function create(){
-		$tabel = 'reseller';
+		$tabel = 'user';
 		$this->createakunmodel->createpenjual($tabel);
-		echo "<script>alert('anda terdaftar sebagai reseller');</script>";
+		echo "<script>alert('anda terdaftar');</script>";
 		$this->load->view('login');
 	}
 }

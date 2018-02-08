@@ -2,9 +2,8 @@
 
 class Loginmodel extends CI_Model{
 	
-	
-	function getLogin($tabel, $user){
-		$query = $this->db->get_where($tabel, array('username' => $user));
+	function getLogin( $user){
+		$query = $this->db->get_where('user', array('email' => $user));
 		if ($query->num_rows() == 1)
 		return $query->row();
 		else

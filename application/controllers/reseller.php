@@ -13,17 +13,19 @@ class Reseller extends CI_Controller {
 	public function index() {
 		$this->read();
 	}
+	public function tampil() {
+		echo $this->input->post('list');
+	}
 	public function read() {
 		$data['produk'] = $this->modelproduk->readproduk();
 		$this->load->view('reseller/m_kastemer',$data);
 	}
-	public function create()
-	{
+	public function create(){
 		if ($this->input->post()){
 			$this->modelkastamer->createkastamer();
 			redirect('reseller');
 		}else{
-			$this->load->view('reseller/formkastamer');
+			$this->load->view('listTransaksi');
 		}
 	}
 	public function update($id)
