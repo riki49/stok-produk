@@ -82,6 +82,7 @@ body {
   </div>
   <div class="column">
     <img src="img_lights.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+    <input type="file" name="foto">
   </div>
 </div>
 

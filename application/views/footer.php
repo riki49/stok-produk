@@ -5,4 +5,3 @@
     <strong>Copyright &copy; 2017 <a href="http://pemudakhusnudzon.org">husnudzon food</a>.</strong> All rights
     reserved.
   </footer>
-  
