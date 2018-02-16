@@ -5,10 +5,9 @@ class Produk extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('modelproduk');
-		if ($this->session->userdata('status') !=TRUE) {
+		if ($this->session->userdata('level') != 'admin') {
 			redirect('login');
 		}
-		
 	}
 
 	public function create(){
@@ -16,7 +15,7 @@ class Produk extends CI_Controller {
 			$this->modelproduk->createproduk();
 			redirect('admin');
 		}else{
-			$this->load->view('admin/formproduk');
+			$this->load->view('user/admin/formAddProduk');
 		}
 	}
 	public function update($id) {
@@ -25,7 +24,7 @@ class Produk extends CI_Controller {
 			redirect('admin');
 		} else {
 			$data['m_produk']=$this->modelproduk->detailproduk($id);
-			$this->load->view('admin/formeditproduk',$data);
+			$this->load->view('user/admin/formeditproduk',$data);
 		}
 	}
 

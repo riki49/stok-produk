@@ -45,27 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!--start-rate-->
 <script src="assets/js/jstarbox.js"></script>
 	<link rel="stylesheet" href="assets/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
-		<script type="text/javascript">
-			jQuery(function() {
-			jQuery('.starbox').each(function() {
-				var starbox = jQuery(this);
-					starbox.starbox({
-					average: starbox.attr('data-start-value'),
-					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-					ghosting: starbox.hasClass('ghosting'),
-					autoUpdateAverage: starbox.hasClass('autoupdate'),
-					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-					stars: starbox.attr('data-star-count') || 5
-					}).bind('starbox-value-changed', function(event, value) {
-					if(starbox.hasClass('random')) {
-					var val = Math.random();
-					starbox.next().text(' '+val);
-					return val;
-					} 
-				})
-			});
-		});
-		</script>
+		
 <!--//End-rate-->
 </head>
 <body>
@@ -78,9 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="top-right">
 					<ul>
-						<li><a href="checkout.html">Checkout</a></li>
 						<li><a href="<?php echo base_url('login')?>">Login</a></li>
-						<li><a href="<?php echo base_url('createakun')?>"> Create Account </a></li>
+						<li><a href="<?php echo base_url('akun')?>"> Create Account </a></li>
 					</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -90,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="logo-nav">
 						<div class="logo-nav-left">
-							<h1><a href="index.html">Husnudzon<span>Halal Food Official</span></a></h1>
+							<h1><a href="index.html">Husnudzon Food<span>Halal Food Official</span></a></h1>
 						</div>
 						<div class="logo-nav-left1">
 							<nav class="navbar navbar-default">
@@ -112,31 +91,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="row">
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														<h6>Submenu1</h6>
-														<li><a href="products.html">Clothing</a></li>
-														<li><a href="products.html">Wallets</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Watches</a></li>
-														<li><a href="products.html"> Underwear </a></li>
-														<li><a href="products.html">Accessories</a></li>
+														<h6>Snack 5000</h6>
+														<li>Batagor</li>
+														<li>Bihun</li>
+														<li>Cimol</li>
+														<li>Lumpia</li>
+														<li>Makaroni</li>
+														<li>Pangsit</li>
+														<li>Siomay</li>
 													</ul>
 												</div>
 												<div class="col-sm-3  multi-gd-img">
-													<ul class="multi-column-dropdown">
-														<h6>Submenu2</h6>
-														<li><a href="products.html">Sunglasses</a></li>
-														<li><a href="products.html">Wallets,Bags</a></li>
-														<li><a href="products.html">Footwear</a></li>
-														<li><a href="products.html">Watches</a></li>
-														<li><a href="products.html">Accessories</a></li>
-														<li><a href="products.html">Jewellery</a></li>
-													</ul>
-												</div>
-												<div class="col-sm-3  multi-gd-img">
-														<a href="products.html"><img src="assets/images/woo.jpg" alt=" "/></a>
+														<img src="assets/upload/s4.jpg" alt=" "/></a>
 												</div> 
 												<div class="col-sm-3  multi-gd-img">
-														<a href="products.html"><img src="assets/images/woo1.jpg" alt=" "/></a>
+														<img src="assets/upload/s5.jpg" alt=" "/></a>
 												</div>
 												<div class="clearfix"></div>
 											</div>
@@ -148,69 +117,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="row">
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														<h6>Submenu1</h6>
-														<li><a href="products.html">Clothing</a></li>
-														<li><a href="products.html">Wallets</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Watches</a></li>
-														<li><a href="products.html"> Underwear </a></li>
-														<li><a href="products.html">Accessories</a></li>
+														<h6>Makanan berat</h6>
+														<li>nasi</li>
+														<li>nasi kuning</li>
+														<li>Ayam goreng</li>
+														<li>Ayam Penyet</li>
+														<li>Sayur</li>
+														<li>Gule</li>
+														<li>Sate</li>
+														<li>dll.</li>
 													</ul>
 												</div>
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
-														<h6>Submenu2</h6>
-														<li><a href="products.html">Sunglasses</a></li>
-														<li><a href="products.html">Wallets,Bags</a></li>
-														<li><a href="products.html">Footwear</a></li>
-														<li><a href="products.html">Watches</a></li>
-														<li><a href="products.html">Accessories</a></li>
-														<li><a href="products.html">Jewellery</a></li>
+														<h6>Takjil</h6>
+														<li>puding</li>
+														<li>kolek</li>
+														<li>jus</li>
+														<li>micool</li>
+														<li>sop buah</li>
+														<li>dll</li>
 													</ul>
 												</div>
 												<div class="col-sm-3  multi-gd-img">
-														<a href="products1.html"><img src="assets/images/woo3.jpg" alt=" "/></a>
+														<a href="products1.html"><img src="assets/upload/ct1.jpg" alt=" "/></a>
 												</div> 
 												<div class="col-sm-3  multi-gd-img">
-														<a href="products1.html"><img src="assets/images/woo4.jpg" alt=" "/></a>
+														<a href="products1.html"><img src="assets/upload/ct2.jpg" alt=" "/></a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</ul>
+									</li><li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cireng <b class="caret"></b></a>
+										<ul class="dropdown-menu multi-column columns-3">
+											<div class="row">
+												<div class="col-sm-3  multi-gd-img">
+													<ul class="multi-column-dropdown">
+														<h6>Cireng Bumbu</h6>
+														<li>bumbu kacang</li>
+														<li>bumbu sambal ijo</li>
+														<li>bumbu balado</li>
+														<li>bumbu Rujak</li>
+													</ul>
+												</div>
+												<div class="col-sm-3  multi-gd-img">
+														<a href="products1.html"><img src="assets/upload/c1.jpg" alt=" "/></a>
+												</div> 
+												<div class="col-sm-3  multi-gd-img">
+														<a href="products1.html"><img src="assets/upload/c2.jpg" alt=" "/></a>
 												</div>
 												<div class="clearfix"></div>
 											</div>
 										</ul>
 									</li>
-									<li><a href="mail.html">Mail Us</a></li>
+									<li><a href="<?php echo base_url('') ?>">home</a></li>
+									<!-- <li><a href="mail.html">Mail Us</a></li> -->
 								</ul>
 							</div>
 							</nav>
 						</div>
-						<div class="logo-nav-right">
-							<ul class="cd-header-buttons">
-								<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-							</ul> <!-- cd-header-buttons -->
-							<div id="cd-search" class="cd-search">
-								<form action="#" method="post">
-									<input name="Search" type="search" placeholder="Search...">
-								</form>
-							</div>	
-						</div>
-						<div class="header-right2">
-							<div class="cart box_1">
-								<a href="checkout.html">
-									<h3> <div class="total">
-										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-										<img src="assets/images/bag.png" alt="" />
-									</h3>
-								</a>
-								<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-								<div class="clearfix"> </div>
-							</div>	
-						</div>
+						
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!--header-->
+		</div>		<!--header-->
 		<!--banner-->
 		<div class="banner1">
 			<div class="container">
@@ -225,7 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="login">
 				<div class="main-agileits">
 					<div class="form-w3agile">
-						<h3>Login To New Shop</h3>
+						<h3>Login To Husnudzon Shop</h3>
 						<form action="<?php echo base_url('login/doLogin') ?>" method="post">
 							<div class="key">
 								<i class="fa fa-envelope" aria-hidden="true"></i>

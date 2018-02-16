@@ -2,10 +2,9 @@
 
 class Modelproduk extends CI_Model{
 	function createproduk(){
-		$data = array(
-			
+		$data = array(		
 			'id' => $this->input->post ('id'),
-			'nama' => $this->input->post ('nama'),
+			'nama' => $this->input->post ('namaProduk'),
 			'level' => $this->input->post ('level'),
 			'harga' => $this->input->post ('harga'),
 			'tgl_produksi' => $this->input->post ('tgl_produksi'),
@@ -28,8 +27,13 @@ class Modelproduk extends CI_Model{
 			'level' => $this->input->post ('level'),
 			'harga' => $this->input->post ('harga'),
 			'tgl_produksi' => $this->input->post ('tgl_produksi'),
-			'jumlah' => $this->input->post ('jumlah')
+			'jumlah' => $this->input->post('jumlah')
 		);
+		$this->db->where('id', $id);
+		$this->db->update('produk',$data);
+	}
+
+	function kurangiStok ($id, $data){
 		$this->db->where('id', $id);
 		$this->db->update('produk',$data);
 	}
@@ -38,13 +42,13 @@ class Modelproduk extends CI_Model{
 		$this->db->delete('produk');
 	}
 
-	function jenis(){
-		$query = $this->db->get('jenis');
-		return $query -> result();
-	}
-	function level(){
-		$query = $this->db->get('level');
-		return $query -> result();
-	}
+	// function jenis(){
+	// 	$query = $this->db->get('jenis');
+	// 	return $query -> result();
+	// }
+	// function level(){
+	// 	$query = $this->db->get('level');
+	// 	return $query -> result();
+	// }
 
 }

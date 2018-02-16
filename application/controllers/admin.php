@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('modelproduk');
-		if ($this->session->userdata('status') !=TRUE) {
+		if ($this->session->userdata('level') != 'admin') {
 			redirect('login');
 		}
 	}
@@ -14,11 +14,12 @@ class Admin extends CI_Controller {
 		$this->read();
 	}
 	public function read() {
+
 		$data['produk'] = $this->modelproduk->readproduk();
-		$this->load->view('admin/m_produk',$data);
+		$this->load->view('user/admin/masterAdminView',$data);
 	}
 
 	public function edit() {
-		$this->load->view('fotogalery');
+		$this->load->view('user/admin/formEditDashboard');	
 	}
 }

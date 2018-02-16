@@ -3,12 +3,18 @@
 class Login extends CI_Controller {
 
 	public function __construct() {
-	parent::__construct();
-	$this->load->model('loginmodel');
+		parent::__construct();
+		$this->load->model('loginmodel');	
 	}
 
 	public function index() {
-		$this->load->view('public/login');
+		if ($this->session->userdata('level') == 'admin') {
+			redirect('admin');
+		} else if ($this->session->userdata('status') ==TRUE ) {
+			redirect('reseller');
+		} else {
+			$this->load->view('public/login');
+		}
 	}
 			
 	public function doLogin() {
@@ -30,16 +36,15 @@ class Login extends CI_Controller {
 			if($passresult == $pass){
 				$data_session = array(
 				'nama' => $user,
-				'status' => TRUE
+				'status' => TRUE,
+				'level'=>'admin'
 				);
 				// session_start();
 				// $_SESSION['nama'] = $user;
 				$this->session->set_userdata($data_session);
 				redirect('admin');
 			} else {
-				echo "<script>alert('user name/password salah');</script>";
-				// $this->load->view('login');
-				redirect('login');
+				echo "<script>alert('email atau password salah');location.href='http://localhost/food/login'</script>";
 			}
 		} else {
 			$login = $this->loginmodel->getLogin($email);
@@ -53,20 +58,22 @@ class Login extends CI_Controller {
 			if($passresult == $pass){
 				$data_session = array(
 				'nama' => $user,
-				'status' => "login"
+				'status' => "login",
+				'email' => $email,
+				'id' => $login->id
 				);
 				$this->session->set_userdata($data_session);
 				// session_start();
 				// $_SESSION['nama'] = $user;
 				redirect('reseller');
 			} else {
-				echo "<script>alert('user name/password salah');</script>";
-				$this->load->view('login');
+				echo "<script>alert('email atau password salah');location.href='http://localhost/food/login'</script>";
 			}
 		}
 	}
 	
 	public function doLogout(){
+		echo "<script>alert('email atau password salah');location.href='http://localhost/food/login'</script>";
 		$this->session->sess_destroy();
 		redirect('');
 	}

@@ -5,6 +5,7 @@ class Reseller extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('modelproduk');
+		$this->load->model('mailModel');
 		if ($this->session->userdata('status') !=TRUE) {
 			redirect('login');
 		}
@@ -13,23 +14,13 @@ class Reseller extends CI_Controller {
 	public function index() {
 		$this->read();
 	}
-	public function tampil() {
-		echo $this->input->post('list');
-	}
+
 	public function read() {
 		$data['produk'] = $this->modelproduk->readproduk();
-		$this->load->view('reseller/m_kastemer',$data);
+		$this->load->view('user/reseller/m_kastemer',$data);
 	}
-	public function create(){
-		if ($this->input->post()){
-			$this->modelkastamer->createkastamer();
-			redirect('reseller');
-		}else{
-			$this->load->view('listTransaksi');
-		}
-	}
-	public function update($id)
-	{
+	
+	public function update($id) {
 		if ($this->input->post()){
 			$this->modelkastamer->updatekastamer($id);
 			redirect('reseller');
@@ -42,5 +33,21 @@ class Reseller extends CI_Controller {
 		$this->modelkastamer->deletekastamer($id);
 		redirect ('reseller');
 	}
+
+	public function sendMail() {
+		if ($this->input->post()){
+			$id = $_SESSION['id'];
+
+			$this->mailModel->sendMail($id);
+			echo "<script>alert('Sukses kirim pesan');location.href='http://localhost/food/reseller'</script>";
+		}else{
+			$this->load->view('user/reseller/formEmail');
+		}
+	}
+	public function readMail($id) {
+		$inbox['mail'] = $this->mailModel->readMail($id);
+		$this->load->view('user/reseller/masterMail', $inbox);
+	}
+
 }
 
