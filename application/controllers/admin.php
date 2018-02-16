@@ -5,6 +5,7 @@ class Admin extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('modelproduk');
+		$this->load->model('mailModel');
 		if ($this->session->userdata('level') != 'admin') {
 			redirect('login');
 		}
@@ -21,5 +22,22 @@ class Admin extends CI_Controller {
 
 	public function edit() {
 		$this->load->view('user/admin/formEditDashboard');	
+	}
+
+	public function sendMail($id) {
+		if ($this->input->post()){
+			$this->mailModel->sendMail($id, 0);
+			echo "<script>alert('Sukses kirim pesan');location.href='http://localhost/food/admin'</script>";
+		}else{
+			$this->load->view('public/formEmail');
+		}
+	}
+	public function readMail() {
+		$inbox['mail'] = $this->mailModel->adminReadMail();
+		$this->load->view('user/admin/masterMail', $inbox);
+	}
+	public function replyMail($id) {
+		$this->session->set_userdata( array('id' => $id));
+		$this->load->view('user/admin/formEmail', $id);
 	}
 }

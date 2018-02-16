@@ -1,7 +1,5 @@
 <?php 
-  $nama = $_SESSION['nama'];
-  $email = $_SESSION['email'];
-  $id = $_SESSION['id'];
+  $id = $this->session->userdata('id');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,12 +45,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--contact-->
 					<div class="mail-w3ls">
 						<div class="container">
-							<h2 class="tittle">Mail Us</h2>
+							<h2 class="tittle">Reply Email</h2>
 								<div class="mail-bottom">
-									<form action="<?php echo base_url('admin/sendMail')?>" method="post">
-										<input name="username" type="text" readonly="" value="<?php echo $nama ?>" >
-										<input name="email" type="email" readonly value="<?php echo $email ?>">
-										<input id="telephon" readonly type="text" placeholder="=>kirim pada admin">
+									<form action="<?php echo base_url('admin/sendMail/')?><?php echo $id ?>" method="post">
+										<input name="username" type="text" readonly value="admin" >
+										<input name="email" type="email" readonly value="admin">
+										<input id="telephon" readonly type="text" placeholder="=>kirim balasan">
 										<textarea id="pesan" name="pesan" placeholder="pesan"></textarea>
 										<input type="submit" name="input">
 									</form>

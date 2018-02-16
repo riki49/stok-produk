@@ -21,13 +21,13 @@ class Modelproduk extends CI_Model{
 		$query=$this->db->get('produk');
 		return $query->row();
 	}
-	function updateproduk ($id){
+	function updateproduk ($id, $jumlah){
 		$data=array(
 			'nama' => $this->input->post ('nama'),
 			'level' => $this->input->post ('level'),
 			'harga' => $this->input->post ('harga'),
 			'tgl_produksi' => $this->input->post ('tgl_produksi'),
-			'jumlah' => $this->input->post('jumlah')
+			'jumlah' => $jumlah
 		);
 		$this->db->where('id', $id);
 		$this->db->update('produk',$data);

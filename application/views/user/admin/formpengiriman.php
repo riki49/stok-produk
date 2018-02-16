@@ -250,14 +250,14 @@
 
 <script>
   function sum() {
-      var jmlharga = document.getElementById('harga').value;
-      var jmlambil = document.getElementById('jumlahambil').value;
-      var jmlbayar = parseInt(jmlharga) * parseInt(jmlambil);
-      
-      if (!isNaN(jmlbayar)) {
-         document.getElementById('jumlahbayar').value = jmlbayar;
-      }
-}
+    var jmlharga = document.getElementById('harga').value;
+    var jmlambil = document.getElementById('jumlahambil').value;
+    var jmlbayar = parseInt(jmlharga) * parseInt(jmlambil);
+    
+    if (!isNaN(jmlbayar)) {
+       document.getElementById('jumlahbayar').value = jmlbayar;
+    }
+  }
 </script>
 </body>
 </html>

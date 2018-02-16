@@ -38,7 +38,7 @@ class Reseller extends CI_Controller {
 		if ($this->input->post()){
 			$id = $_SESSION['id'];
 
-			$this->mailModel->sendMail($id);
+			$this->mailModel->sendMail($id, 1);
 			echo "<script>alert('Sukses kirim pesan');location.href='http://localhost/food/reseller'</script>";
 		}else{
 			$this->load->view('user/reseller/formEmail');

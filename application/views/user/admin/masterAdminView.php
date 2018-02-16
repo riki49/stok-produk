@@ -67,8 +67,7 @@
                         <td><?=$m_produk->jumlah?></td>
                         <td>
                           
-                            <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>"
-                             class="btn btn-warning">Edit</a>
+                            <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>" class="btn btn-warning">+</a>
                             <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){
                              location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>'
                               }" class="btn btn-danger">Hapus</a>
