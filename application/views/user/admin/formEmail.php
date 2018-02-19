@@ -6,8 +6,8 @@
 <head>
 <title>husnudzon food</title>
 <!--css-->
-<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!--banner-->
 		<div class="banner1">
 			<div class="container">
-				<h3><a href="<?php echo base_url('reseller') ?>">kembali</a> / <span>Mail</span></h3>
+				<h3><a href="<?php echo base_url('admin') ?>">kembali</a> / <span>Mail</span></h3>
 			</div>
 		</div>
 		<!--banner-->

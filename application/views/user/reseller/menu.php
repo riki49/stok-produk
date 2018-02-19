@@ -11,7 +11,7 @@
         </div>
         <div class="pull-left info">
           <p><?php echo $nama ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i></a>
         </div>
       </div>
       <ul class="sidebar-menu" data-widget="tree">
@@ -30,5 +30,17 @@
             <li ><a href="<?php echo base_url("reseller/readMail/$id") ?>"><i class="fa fa-circle-o"></i>Semua pesan</a></li>
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i>Belum Dibaca</a></li> -->
           </ul>
-        </li>ss      
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gears"></i> <span>Pengaturan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li ><a href="<?php echo base_url()?>reseller/editProfil"><i class="fa fa-circle-o"></i>Edit akun</a></li>
+          </ul>
+        </li>    
+
     </section>

@@ -1,5 +1,6 @@
 <?php 
 $nama = $_SESSION['nama'];
+$id = 1;
 ?>
 <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -10,12 +11,9 @@ $nama = $_SESSION['nama'];
         </div>
         <div class="pull-left info">
           <p><?php echo $nama ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i></a>
         </div>
       </div>
-      <!-- search form -->
-      
-      <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
@@ -53,20 +51,20 @@ $nama = $_SESSION['nama'];
             </span>
           </a>
           <ul class="treeview-menu">
-            <li ><a href="<?php echo base_url()?>admin/readMail"><i class="fa fa-circle-o"></i> kotak masuk </a></li>
+            <li ><a href="<?php echo base_url()?>admin/readMail"><i class="fa fa-circle-o"></i> semua pesan </a></li>
           </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-gears"></i> <span>Edit Dashboard</span>
+            <i class="fa fa-gears"></i> <span>Pengaturan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li ><a href="<?php echo base_url('admin/edit') ?>"><i class="fa fa-circle-o"></i>Edit Dashboard Public</a></li>
+            <li ><a href="<?php echo base_url('admin/editDashboard') ?>"><i class="fa fa-circle-o"></i>Edit Dashboard Public</a></li>
+            <li ><a href="<?php echo base_url()?>admin/editProfil"><i class="fa fa-circle-o"></i>Edit akun</a></li>
           </ul>
-        </li>
-       
+        </li>    
     </section>

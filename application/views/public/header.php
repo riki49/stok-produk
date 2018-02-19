@@ -20,7 +20,7 @@
 				<div class="container">
 					<div class="logo-nav">
 						<div class="logo-nav-left">
-							<h1><a href="index.html">Husnudzon Food<span>Halal Food Official</span></a></h1>
+							<h1><a>Husnudzon Food<span>Halal Food Official</span></a></h1>
 						</div>
 						<div class="logo-nav-left1">
 							<nav class="navbar navbar-default">
@@ -43,7 +43,7 @@
 												<div class="col-sm-3  multi-gd-img">
 													<ul class="multi-column-dropdown">
 														<h6>Snack 5000</h6>
-														<li>Batago</li>
+														<li>Batagor</li>
 														<li>Bihun</li>
 														<li>Cimol</li>
 														<li>Lumpia</li>

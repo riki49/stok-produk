@@ -12,10 +12,24 @@ class Akunmodel extends CI_Model{
 		$query = $this->db->get('user');
 		return $query -> result();
 	}
+	function readDetaildUser($id){
+		$query = $this->db->get_where('user', array('id' => $id));
+		// $this->db->where('id', $id);
+		// $query = $this->db->get('user');
+		return $query -> row();
+	}
+	function updateUser($id){
+		$this->db->where('id', $id);
+		$query = $this->db->update('user', array('username' => $this->input->post('username'), 'password'=>$this->input->post('newPassword')));
+	}
 	function hapusAkun($id){
 		$this->db->where('id', $id);
 		$this->db->delete('user');
 		// $this->db->delete('user','2' );
+	}
+	function bakaAdmin($id){
+
+		$sql = $this>query;
 	}
 
 }

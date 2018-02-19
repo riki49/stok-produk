@@ -21,11 +21,8 @@ class Login extends CI_Controller {
 		$passresult = '';
 		$email = $this->input->post('email');
 		$pass = $this->input->post('pass');
-
 		if ($email == 'rikimustofa49@gmail.com') {
-			
 			$datalogin = $this->loginmodel->getLogin($email);
-			$user = $datalogin->username;
 			
 			if ($datalogin != '') {
 				$passresult = $datalogin->password;
@@ -35,9 +32,12 @@ class Login extends CI_Controller {
 
 			if($passresult == $pass){
 				$data_session = array(
-				'nama' => $user,
+				'nama' => $datalogin->username,
 				'status' => TRUE,
-				'level'=>'admin'
+				'level'=>'admin',
+				'id'=> $datalogin->id,
+				'password'=> $datalogin->password,
+				'email' => $email
 				);
 				// session_start();
 				// $_SESSION['nama'] = $user;
@@ -47,24 +47,22 @@ class Login extends CI_Controller {
 				echo "<script>alert('email atau password salah');location.href='http://localhost/food/login'</script>";
 			}
 		} else {
-			$login = $this->loginmodel->getLogin($email);
-			$user = $login->username;
-			if ($login != '') {
-				$passresult = $login->password;
+			$datalogin = $this->loginmodel->getLogin($email);
+			if ($datalogin != '') {
+				$passresult = $datalogin->password;
 			} else {
 				$passresult = 'salah';
 			}
 			
 			if($passresult == $pass){
 				$data_session = array(
-				'nama' => $user,
-				'status' => "login",
-				'email' => $email,
-				'id' => $login->id
+				'nama' => $datalogin->username,
+				'status' => TRUE,
+				'id'=> $datalogin->id,
+				'password'=> $datalogin->password,
+				'email' => $email
 				);
 				$this->session->set_userdata($data_session);
-				// session_start();
-				// $_SESSION['nama'] = $user;
 				redirect('reseller');
 			} else {
 				echo "<script>alert('email atau password salah');location.href='http://localhost/food/login'</script>";

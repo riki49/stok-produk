@@ -115,7 +115,7 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url('reseller')?>"><button type="button" class="btn bg-olive btn-flat margin">+ pesan produk</button></a>
+        <!-- <a href="<?php echo base_url('reseller/pesanProduk')?>"><button type="button" class="btn bg-olive btn-flat margin">+ pesan produk</button></a> -->
           <!-- /.box -->
 
           <div class="box">

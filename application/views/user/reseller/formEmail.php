@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="container">
 							<h2 class="tittle">Mail Us</h2>
 								<div class="mail-bottom">
-									<form action="<?php echo base_url('admin/sendMail')?>" method="post">
+									<form action="<?php echo base_url('reseller/sendMail')?>" method="post">
 										<input name="username" type="text" readonly="" value="<?php echo $nama ?>" >
 										<input name="email" type="email" readonly value="<?php echo $email ?>">
 										<input id="telephon" readonly type="text" placeholder="=>kirim pada admin">

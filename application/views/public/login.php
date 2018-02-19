@@ -54,7 +54,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					 <div class="top-left">
-						<a href="#"> Help  <i class="glyphicon glyphicon-phone" aria-hidden="true"></i> +628-2317-3084-30</a>
 					</div>
 					<div class="top-right">
 					<ul>
@@ -213,8 +212,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</form>
 					</div>
 					<div class="forg">
-						<a href="#" class="forg-left">Forgot Password</a>
-						<a href="registered.html" class="forg-right">Register</a>
+						<!-- <a href="#" class="forg-left">Forgot Password</a> -->
+						<a href="akun" class="forg-right">Register</a>
 					<div class="clearfix"></div>
 					</div>
 				</div>

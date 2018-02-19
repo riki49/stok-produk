@@ -392,7 +392,7 @@
       $sumberct8 = $_FILES["ct42"]["tmp_name"];   
       move_uploaded_file($sumberct8, $folder."ct42.jpg");
 
-      echo "<script>alert('berhasil update');location.href='http://localhost/food/admin/edit'</script>";
+      echo "<script>alert('berhasil update');location.href='http://localhost/food/admin'</script>";
 
     }
   ?>

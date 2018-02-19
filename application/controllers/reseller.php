@@ -6,6 +6,8 @@ class Reseller extends CI_Controller {
 		parent::__construct();
 		$this->load->model('modelproduk');
 		$this->load->model('mailModel');
+		$this->load->model('akunmodel');
+
 		if ($this->session->userdata('status') !=TRUE) {
 			redirect('login');
 		}
@@ -47,6 +49,32 @@ class Reseller extends CI_Controller {
 	public function readMail($id) {
 		$inbox['mail'] = $this->mailModel->readMail($id);
 		$this->load->view('user/reseller/masterMail', $inbox);
+	}
+
+	public function editProfil() {
+		$id = $this->session->userdata('id');
+		$detail = $this->akunmodel->readDetaildUser($id);
+
+		if ($this->input->post()){	
+			if ($detail->password == $this->input->post('password')) {
+				$this->akunmodel->updateUser($id);	
+				$this->session->userdata('password');
+				$this->session->sess_destroy();
+				$data_session = array(
+				'nama' => $detail->username,
+				'status' => TRUE,
+				'id'=> $detail->id,
+				'password'=> $detail->password,
+				'email' => $detail->email
+				);
+				$this->session->set_userdata($data_session);
+			echo "<script>alert('Sukses update User');location.href='http://localhost/food/reseller'</script>";
+			} else {
+				echo "<script>alert('password lama salah');location.href='http://localhost/food/reseller/editProfil'</script>";
+			}
+		}else{
+			$this->load->view('user/reseller/formEditProfil');
+		}
 	}
 
 }

@@ -33,6 +33,7 @@
         <a href="<?php echo base_url()?>produk/create"><button 
         type="button" class="btn bg-olive btn-flat margin">
         + produk baru</button></a>
+                
           <!-- /.box -->
 
           <div class="box">
@@ -68,9 +69,7 @@
                         <td>
                           
                             <a href="<?php echo base_url()?>produk/update/<?php echo $m_produk->id;?>" class="btn btn-warning">+</a>
-                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){
-                             location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>'
-                              }" class="btn btn-danger">Hapus</a>
+                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='<?php echo base_url()?>produk/delete/<?php echo $m_produk->id;?>'}" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                    <?php endforeach; ?>

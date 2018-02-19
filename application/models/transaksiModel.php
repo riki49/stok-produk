@@ -14,4 +14,8 @@ class TransaksiModel extends CI_Model{
 	function readTransaksi(){
 		return $this->db->get('pengiriman')-> result();
 	}
+
+	function view_row(){
+		return $this->db->get('pengiriman')->result();
+	}
 }

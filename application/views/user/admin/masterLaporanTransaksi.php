@@ -33,6 +33,9 @@
         <a href="<?php echo base_url()?>admin"><button 
         type="button" class="btn bg-olive btn-flat margin">
         kembali</button></a>
+        <a href="<?php echo base_url()?>admin/cetak"><button 
+        type="button" class="btn bg-olive btn-flat margin">
+        Print</button></a>
           <!-- /.box -->
 
           <div class="box">

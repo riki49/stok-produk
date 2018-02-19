@@ -11,7 +11,7 @@
     $jumlah=$m_produk->jumlah;
     // $tgl_produksi=$m_produk->tgl_produksi;
     $level = $m_produk->level;
-    $nama = $m_produk->nama;
+    $namaproduk = $m_produk->nama;
   }
   $nama = $_SESSION['nama'];
   ?>
@@ -140,7 +140,7 @@
       <div class="row">
 
         <div class="col-xs-12">
-        <a href="<?php echo base_url()?>admin"><button type="button" class="btn bg-olive btn-flat margin">Kembali</button></a>
+        <a href="<?php echo base_url()?>pengiriman"><button type="button" class="btn bg-olive btn-flat margin">Kembali</button></a>
             <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pengiriman</h3>
@@ -162,7 +162,7 @@
 
                   <div class="col-sm-6">
                     <input type="text" name="nama" value="<?php 
-                    echo $nama ?>" readonly class="form-control" id="success" />
+                    echo $namaproduk ?>" readonly class="form-control" id="success" />
                   </div>
                 </div>
                
@@ -187,12 +187,12 @@
                     <input type="text" name="jumlah" value="<?php echo $jumlah ?>" id="stok" readonly class="form-control" />
                   </div>
                 </div>
-                <div class="form-group">
+<!--                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">id transaksi</label>
 
                   <div class="col-sm-6">
                     <input type="text" name="idtrx" value="" class="form-control" id="success" />
-                  </div>
+                  </div> -->
                 </div>
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">tanggal transaksi</label>
